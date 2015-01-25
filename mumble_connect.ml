@@ -1,6 +1,7 @@
 (* Mumble connect *)
 open Unix
 
+(* function to handle the string creation and socket read. Uses TLS sockets *)
 let sock_recv sock maxlen =
     let str = String.create maxlen in
     let recvlen = Ssl.read sock str 0 maxlen in
